@@ -1,0 +1,411 @@
+/* ================================================
+   Tor's første nettside - OBS: KI brukt!
+   ================================================ */
+
+/* --- Reset & base -------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f5f0eb;
+  color: #2c2c2c;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Typography ---------------------------------- */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.4em;
+  color: #1a3a5c;
+}
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+  color: #1a3a5c;
+  border-bottom: 2px solid #b8860b;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4em;
+  color: #2c5282;
+}
+p {
+  margin-bottom: 1em;
+  max-width: 70ch;
+}
+
+a {
+  color: #b8860b;
+  text-decoration: underline;
+}
+a:hover {
+  color: #8b6508;
+  text-decoration: none;
+}
+a:visited {
+  color: #7a5c00;
+}
+
+/* --- Header ------------------------------------- */
+header {
+  background-color: #1a3a5c;
+  color: #f5f0eb;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header .site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f5d87b;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+header .site-title:hover {
+  color: #fff;
+}
+
+/* --- Navigation --------------------------------- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+nav a {
+  color: #f5f0eb;
+  text-decoration: none;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(245, 240, 235, 0.4);
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+nav a:hover {
+  background-color: #b8860b;
+  color: #fff;
+  border-color: #b8860b;
+}
+nav a.active {
+  background-color: #b8860b;
+  color: #fff;
+  border-color: #b8860b;
+}
+nav a:visited {
+  color: #f5f0eb;
+}
+
+/* --- Main content ------------------------------- */
+main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* --- Hero section (index) ----------------------- */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.hero figure {
+  flex: 0 0 auto;
+}
+
+.hero img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #b8860b;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  display: block;
+}
+
+.hero figcaption {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.hero-text {
+  flex: 1 1 260px;
+}
+
+/* --- Intro cards (index) ------------------------ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #d5c9b8;
+  border-radius: 6px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  max-width: 100%;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  background-color: #1a3a5c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card a:hover {
+  background-color: #b8860b;
+  color: #fff;
+}
+.card a:visited {
+  color: #fff;
+}
+
+/* --- Sections on inner pages -------------------- */
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* --- Unordered & ordered lists ------------------ */
+ul,
+ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+li {
+  margin-bottom: 0.3rem;
+}
+
+/* --- Definition list (skills/details) ----------- */
+dl {
+  margin: 0.5rem 0 1rem 0;
+}
+dt {
+  font-weight: bold;
+  color: #1a3a5c;
+  margin-top: 0.6rem;
+}
+dd {
+  margin-left: 1.5rem;
+  color: #444;
+}
+
+/* --- Blockquote --------------------------------- */
+blockquote {
+  border-left: 4px solid #b8860b;
+  padding: 0.8rem 1.2rem;
+  margin: 1.2rem 0;
+  background-color: #fffdf5;
+  font-style: italic;
+  color: #555;
+  border-radius: 0 4px 4px 0;
+}
+
+/* --- Table (CV / experience) -------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+}
+caption {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+thead th {
+  background-color: #1a3a5c;
+  color: #f5f0eb;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+tbody tr:nth-child(even) {
+  background-color: #f0ece4;
+}
+tbody tr:hover {
+  background-color: #fdf3d0;
+}
+td,
+th {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #d5c9b8;
+}
+
+/* --- Details / summary (accordion) -------------- */
+details {
+  border: 1px solid #d5c9b8;
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.8rem;
+  background-color: #fff;
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #1a3a5c;
+  list-style: revert;
+}
+details[open] summary {
+  margin-bottom: 0.6rem;
+  color: #b8860b;
+}
+
+/* --- Progress bar (skills) ---------------------- */
+.skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+.skill-bar span {
+  min-width: 130px;
+  font-size: 0.9rem;
+}
+progress {
+  width: 200px;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  accent-color: #b8860b;
+}
+
+/* --- Horizontal rule ---------------------------- */
+hr {
+  border: none;
+  border-top: 1px solid #d5c9b8;
+  margin: 2rem 0;
+}
+
+/* --- Inline text elements ----------------------- */
+mark {
+  background-color: #fdf3d0;
+  padding: 0 0.2em;
+}
+strong {
+  color: #1a3a5c;
+}
+em {
+  font-style: italic;
+}
+code {
+  font-family: "Courier New", monospace;
+  background: #eee;
+  padding: 0 0.3em;
+  border-radius: 3px;
+}
+abbr {
+  cursor: help;
+  text-decoration: underline dotted;
+}
+small {
+  font-size: 0.82rem;
+  color: #777;
+}
+sup {
+  font-size: 0.75rem;
+  vertical-align: super;
+}
+
+/* --- Address ------------------------------------ */
+address {
+  font-style: normal;
+  color: #555;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.9;
+}
+
+/* --- Footer ------------------------------------- */
+footer {
+  background-color: #1a3a5c;
+  color: #c8d8e8;
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.88rem;
+}
+footer a {
+  color: #f5d87b;
+}
+footer p {
+  max-width: 100%;
+  margin: 0.2rem 0;
+}
+
+/* --- Utility ------------------------------------ */
+.badge {
+  display: inline-block;
+  background-color: #1a3a5c;
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 0.15em 0.55em;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  margin-right: 0.2rem;
+}
+
+/* --- Responsive --------------------------------- */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+  progress {
+    width: 140px;
+  }
+}
